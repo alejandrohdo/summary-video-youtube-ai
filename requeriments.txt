@@ -1,0 +1,4 @@
+yt-dlp # para descargar el audio en vez del video y luego convertirla a MP3 usando ffmpeg.
+openai-whisper
+transformers
+torch
