@@ -37,4 +37,4 @@ pip install -r requirements.txt
 ```py
 python summary_video.py --url https://www.youtube.com/watch?v=example
 ```
-And create dir audio, and data
+This create automatic dir: audio and data

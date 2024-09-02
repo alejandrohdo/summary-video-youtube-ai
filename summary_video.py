@@ -21,6 +21,7 @@ def clean_text(text):
     text = ' '.join([word for i, word in enumerate(text.split()) if i == 0 or word != text[i - 1]])
     return text
 
+
 def summarize_text(file_path):
     """Summarize the text using a local model like facebook/bart-large-cnn and save the summary."""
     summarizer = pipeline("summarization", model="facebook/bart-large-cnn")
@@ -38,6 +39,7 @@ def summarize_text(file_path):
         file.write(combined_summary)
     print(f"Resumen completo guardado en: {summary_file_path}")
     return summary_file_path
+
 
 def summarize_with_chatgpt(file_path):
     """Summarize the text from a transcription file using ChatGPT and save the summary."""
