@@ -34,7 +34,13 @@ pip install -r requirements.txt
 
 ## Execute script .py
 
+download audio from youtube video
 ```py
 python summary_video.py --url https://www.youtube.com/watch?v=example
 ```
 This create automatic dir: audio and data
+
+download all audio from youtube channel
+```py
+python download_all_videos_channel.py --channel_url https://www.youtube.com/@herostartup4493 --output my_audio_downloads
+```
