@@ -104,8 +104,8 @@ def parse_arguments():
     current_date = datetime.now().strftime("%Y%m%d_%H%M%S")
     default_output = f"audio/audio_{current_date}"
     parser = argparse.ArgumentParser(description="Script para descargar, transcribir y resumir un video de YouTube.")
-    parser.add_argument('--url', type=str, help='URL del video de YouTube', required=True)
-    parser.add_argument('--output', type=str, default=default_output, help='Ruta de salida para el audio descargado')
+    parser.add_argument('--url', '-url', type=str, help='URL del video de YouTube', required=True)
+    parser.add_argument('--output', '-output', type=str, default=default_output, help='Ruta de salida para el audio descargado')
     return parser.parse_args()
 
 
@@ -121,7 +121,7 @@ def main():
         print('path de resumen===>', path_summary)
     else:
         print("No se pudo descargar el video. Verifica la URL y vuelve a intentarlo.")
-
+    
 
 if __name__ == '__main__':
     main()

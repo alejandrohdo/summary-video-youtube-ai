@@ -1,2 +1,8 @@
 audio
 data
+*.log
+*.mp3
+*.mp4
+*.wav
+*.webm
+*.m4a
