@@ -14,7 +14,7 @@ This tool extracts and summarizes content from YouTube videos using large langua
 - Python 3.8+
 - ffmpeg (for audio extraction)
 - Whisper (for audio transcription)
-- OpenAI API Key (for text summarization)
+- OpenAI API Key (for text summarization) and curate text
 - YouTube-DL or yt-dlp (for downloading YouTube videos)
 
 ## Installation
