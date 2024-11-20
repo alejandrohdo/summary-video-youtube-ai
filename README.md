@@ -26,21 +26,57 @@ This tool extracts and summarizes content from YouTube videos using large langua
    sudo apt install ffmpeg
    ```
 
-## Install the required Python libraries:
-for example use pyenv, create one env and install requeriments 
+2. **Install the required Python libraries**:
+   Use `pyenv` to create an environment and install requirements:
+   ```sh
+   pip install -r requirements.txt
+   ```
+
+3. **Set up OpenAI API Key**:
+   You need to set your OpenAI API key as an environment variable. You can do this by adding the following line to your shell's configuration file (e.g., `.bashrc`, `.zshrc`):
+
+   ```bash
+   export OPENAI_API_KEY='your-api-key-here'
+   ```
+
+   Replace `'your-api-key-here'` with your actual OpenAI API key. After adding this line, reload your shell configuration by running:
+
+   ```bash
+   source ~/.bashrc  # or source ~/.zshrc
+   ```
+
+## Execution Workflow
+
+### Process a Single YouTube Video
+
+To process a single YouTube video, use the `summary_video.py` script:
+
 ```sh
-pip install -r requirements.txt
-```
-
-## Execute script .py
-
-download audio from youtube video
-```py
 python summary_video.py --url https://www.youtube.com/watch?v=example
 ```
-This create automatic dir: audio and data
 
-download all audio from youtube channel
-```py
-python download_all_videos_channel.py --channel_url https://www.youtube.com/@herostartup4493 --output my_audio_downloads
-```
+This will download the audio, transcribe it, and generate a summary. It automatically creates directories for audio and data.
+
+### Process All Videos from a YouTube Channel
+
+To process all videos from a YouTube channel, follow these steps:
+
+1. **Download all videos from a YouTube channel**:
+   Use the `download_all_videos_channel.py` script to download audio from a YouTube channel.
+   ```sh
+   python download_all_videos_channel.py --channel_url https://www.youtube.com/@herostartup4493 --output youtube_audio_downloads
+   ```
+
+2. **Transcribe the downloaded audio**:
+   Use the `process_audio_text.py` script to transcribe the audio files into text.
+   ```sh
+   python process_audio_text.py --input youtube_audio_downloads
+   ```
+
+3. **Correct and curate the transcribed text**:
+   Use the `process_text_curate.py` script to correct and improve the transcribed text.
+   ```sh
+   python process_text_curate.py --input youtube_audio_downloads
+   ```
+
+This sequence of scripts allows for the mass downloading, transcription, and text correction of YouTube videos from a channel.
